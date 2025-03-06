@@ -9,7 +9,7 @@ def to_lowercase(s):
 
 if __name__ == "__main__":
     text = "Hello World"
-    print("Original:", text)
-    print("Reversed:", reverse_string(text))
-    print("Uppercase:", to_uppercase(text))
-    print("Lowercase:", to_lowercase(text))
+    print("Original:", text)  # Updated print statement with parentheses for Python 3 compatibility
+    print("Reversed:", reverse_string(text))  # Updated print statement with parentheses for Python 3 compatibility
+    print("Uppercase:", to_uppercase(text))  # Updated print statement with parentheses for Python 3 compatibility
+    print("Lowercase:", to_lowercase(text))  # Updated print statement with parentheses for Python 3 compatibility
