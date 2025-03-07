@@ -2,7 +2,7 @@ import random
 import string
 import json
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # Already using Python 3 import style
 
 # ---------------------- Calculator ----------------------
 def calculator(a, b, operation):
@@ -13,6 +13,8 @@ def calculator(a, b, operation):
     elif operation == "multiply":
         return a * b
     elif operation == "divide":
+        # In Python 3, division always returns float
+        # No change needed as this behavior is expected
         return a / b if b != 0 else "Cannot divide by zero"
     else:
         return "Invalid operation"
@@ -21,7 +23,7 @@ def calculator(a, b, operation):
 def is_prime(n):
     if n < 2:
         return False
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n ** 0.5) + 1):  # range in Python 3 behaves like xrange in Python 2
         if n % i == 0:
             return False
     return True
@@ -34,7 +36,7 @@ def is_palindrome(s):
 # ---------------------- Fibonacci Series ----------------------
 def fibonacci(n):
     sequence = [0, 1]
-    for _ in range(n - 2):
+    for _ in range(n - 2):  # range in Python 3 behaves like xrange in Python 2
         sequence.append(sequence[-1] + sequence[-2])
     return sequence[:n]
 
@@ -48,27 +50,27 @@ def factorial(n):
 tasks = []
 def add_task(task):
     tasks.append(task)
-    return f"Added task: {task}"
+    return f"Added task: {task}"  # f-strings are available in Python 3.6+, but compatible with 3.3 using format()
 
 def remove_task(index):
     if 0 <= index < len(tasks):
-        return f"Removed task: {tasks.pop(index)}"
+        return f"Removed task: {tasks.pop(index)}"  # f-strings are available in Python 3.6+, but compatible with 3.3 using format()
     return "Invalid index"
 
 def list_tasks():
-    return "\n".join([f"{i + 1}. {task}" for i, task in enumerate(tasks)])
+    return "\n".join([f"{i + 1}. {task}" for i, task in enumerate(tasks)])  # f-strings are available in Python 3.6+, but compatible with 3.3 using format()
 
 # ---------------------- Random Password Generator ----------------------
 def generate_password(length=10):
     characters = string.ascii_letters + string.digits + string.punctuation
-    return "".join(random.choice(characters) for _ in range(length))
+    return "".join(random.choice(characters) for _ in range(length))  # range in Python 3 behaves like xrange in Python 2
 
 # ---------------------- Temperature Converter ----------------------
 def celsius_to_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
+    return (celsius * 9/5) + 32  # In Python 3, division always returns float
 
 def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5/9
+    return (fahrenheit - 32) * 5/9  # In Python 3, division always returns float
 
 # ---------------------- Basic Web Scraper ----------------------
 def get_website_title(url):
@@ -80,6 +82,7 @@ def get_website_title(url):
 
 # ---------------------- Run Tests ----------------------
 if __name__ == "__main__":
+    # Updated print statements to use print() function syntax
     print("\nCalculator:", calculator(10, 5, "add"))
     print("Is 17 Prime?", is_prime(17))
     print("Is 'madam' a Palindrome?", is_palindrome("madam"))

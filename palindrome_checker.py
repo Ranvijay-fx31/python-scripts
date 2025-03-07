@@ -4,4 +4,6 @@ def is_palindrome(s):
 
 if __name__ == "__main__":
     text = "madam"
-    print(f"Is '{text}' a palindrome?", is_palindrome(text))
+    # Changed print statement to use print function with parentheses
+    # Removed f-string as it's not supported in Python 3.3 (only in 3.6+)
+    print("Is '{}' a palindrome?".format(text), is_palindrome(text))

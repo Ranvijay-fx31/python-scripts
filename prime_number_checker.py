@@ -8,4 +8,6 @@ def is_prime(n):
 
 if __name__ == "__main__":
     number = 17
-    print(f"Is {number} a prime number?", is_prime(number))
+    # Changed print statement to use print function with proper formatting
+    # Removed f-string as it's not supported in Python 3.3 (only in 3.6+)
+    print("Is {} a prime number? {}".format(number, is_prime(number)))
